@@ -45,7 +45,6 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
           }
           dir ('./holdings-api') {
-            pwd
             ls
             container('maven') {
               ls
