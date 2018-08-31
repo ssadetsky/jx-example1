@@ -46,6 +46,8 @@ pipeline {
           }
           dir ('./holdings-api') {
             container('maven') {
+              sh "pwd"
+              sh "ls .."
               sh "ls" 
               sh "mvn versions:set -DnewVersion=\$(cat ../VERSION)"
             }
