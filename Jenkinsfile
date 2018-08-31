@@ -45,9 +45,8 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
           }
           dir ('./holdings-api') {
-            ls
             container('maven') {
-              ls
+              sh "ls" 
               sh "mvn versions:set -DnewVersion=\$(cat ../VERSION)"
             }
           }
